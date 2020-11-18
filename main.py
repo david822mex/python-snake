@@ -11,6 +11,10 @@ survived2 = data.Survived
 # choose multiple columns, put column names in a list, thus the double [[]]
 selected = data[["Survived", "Age"]]
 
+# to delete a column, use the "del" keyword
+# del data["PassengerId"]
+
+
 # more than one filter, each filter should be inside (),
 # and then join the filters with | (or) , & (and)
 age_above_35 = selected[(selected.Age > 35) & (selected.Survived > 0)]
@@ -39,3 +43,12 @@ names_of_people_over_35 = data.loc[data.Age > 35, "Name"]
 
 # to only show "Name", "Sex", "Age", use 3:6, because end is not included.
 # print(data.iloc[0, 3:6])
+
+# to create a new column from existing column
+# age_in_2020 = data["Age in 2020"] = data.Age + 100
+# print(age_in_2020)
+# but it doesn't mean the new column is writen in the csv file. It only exist in the memory.
+# use the data.to_cvs() to persist the result.
+
+print(data[["Age", "Name"]].sort_values(by="Age"))
+
