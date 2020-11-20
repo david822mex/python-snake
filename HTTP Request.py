@@ -6,9 +6,22 @@ credentials = {
     "email": "david822@me.com",
     "password": "12345678"
 }
-res = requests.post(URL, credentials)
+token = "alñkjdlajkñdlkña"
+headers = {
+    "Authorization": "Bear " + token
+}
+#  post requests
+res = requests.post(url=URL, json=credentials, headers=headers)
 
 data = res.json()
 with open("data/token.json", "w") as file:
     json.dump(data["user"], file, indent=4)
 print(data)
+
+
+# get requests
+params = {
+    "name": "aldjlas",
+    "apikey": "asjdlñajdl"
+}
+res2 = requests.get(url=URL, params=params, headers=headers)
