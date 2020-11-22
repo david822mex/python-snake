@@ -2,7 +2,7 @@ import smtplib
 
 GMAIL_SERVER = "smtp.gmail.com"
 MY_EMAIL = "david822.mex@gmail.com"
-PASSWORD = " "
+PASSWORD = "Guapo822."
 TO_EMAIL = "tianchuan87822@hotmail.com"
 SUBJECT = "This is a test from Python."
 BODY = "Hello from Python."
